@@ -9,16 +9,7 @@ call dein#add('ervandew/supertab')
 call dein#add('SirVer/ultisnips')
 call dein#add('honza/vim-snippets')
 call dein#add('scrooloose/NERDTree')
-
-" editing
-
-" javascript
-call dein#add('pangloss/vim-javascript')
-call dein#add('mxw/vim-jsx')
-call dein#add('othree/javascript-libraries-syntax.vim')
-call dein#add('ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' })
-call dein#add('carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] })
-call dein#add('othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] })
+call dein#add('scrooloose/nerdcommenter')
 
 call dein#add('Shougo/vimproc.vim', {
       \ 'build': {
@@ -48,6 +39,19 @@ call dein#add('Valloric/MatchTagAlways')
 call dein#add('w0rp/ale')
 call dein#add('chrisbra/NrrwRgn')
 call dein#add('wesQ3/vim-windowswap')
+call dein#add('terryma/vim-multiple-cursors')
+
+" javascript
+call dein#add('pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] })
+call dein#add('mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] })
+call dein#add('othree/javascript-libraries-syntax.vim')
+call dein#add('ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' })
+call dein#add('carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] })
+call dein#add('othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] })
+
+" text objects
+call dein#add('kana/vim-textobj-user')
+call dein#add('beloglazov/vim-textobj-quotes')
 
 call dein#end()
 call dein#save_state()
