@@ -28,10 +28,6 @@ noremap > >>
 noremap K ^
 noremap L $
 
-" add new line above and below and return to normal mode
-noremap oo o<ESC>
-noremap OO O<ESC>
-
 " remove highlighting 
 nnoremap <leader>noh :noh<cr>
 
@@ -43,20 +39,11 @@ nnoremap <leader>py :!python %<cr>
 " Convert word to uppercase while in insert mode
 inoremap <leader>u <esc>viwUA
 
-" Quickly insert an empty new line without entering insert mode
-nnoremap oo o<ESC>
-
 " paste with correct indentation
 nnoremap p p=`]
 
 " open vimrc from any vim buffer by typing leader key and then vimrc
 nnoremap <leader>ev :e $MYVIMRC<cr>
-
-" automatically source the changes to vimrc when saved and closed
-aug reload_vimrc 
-  autocmd!
-  autocmd BufWritePost ~/.vimrc source ~/.vimrc
-aug END
 
 " open easygrep
 nnoremap <Leader>g :Grep 
@@ -68,15 +55,8 @@ nnoremap <Leader>gc :Gcommit<CR>
 " open ~/.eslintrc in vertical split
 nnoremap <leader>esrc :vs ~/.eslintrc<cr>
 
-" reset ctrlp cache
-map <leader>C :CtrlPClearCache<cr>
-
-" Use a leader instead of the actual named binding
-nnoremap <leader>t :CtrlP<cr>
-
 " move between windows
 nnoremap <C-K> <C-W><C-J>
 nnoremap <C-J> <C-W><C-H>
 nnoremap <C-L> <C-W><C-K>
 nnoremap <C-P> <C-W><C-L>
-

@@ -2,7 +2,7 @@
 syntax on
 
 " Sets filetype detection, plugin, and indent 
-filetype plugin indent on
+filetype indent plugin on
 
 set termguicolors
 
@@ -21,8 +21,41 @@ set rnu
 set hidden
 
 " on newline, don't continue comments
-au BufNewFile,BufRead * setlocal fo-=cr
+aug disable_comments
+  au!
+  au BufNewFile,BufRead * setlocal fo-=cr
+aug END
 
 " highlight 'this' keyword
 hi ThisKeywordGroup ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE
 match ThisKeywordGroup /this/
+
+" ignored directories
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/ios/*,*/android/*
+
+" create file as soon as it's edited
+fun! CreateFile()
+  :echom 'filetype'
+  :echom &ft
+  if 'nerdtreebuffergator' =~ &ft
+    return
+  endif
+  :write
+endfun
+
+aug create_file
+  au!
+  au BufNewFile * call CreateFile()
+aug END
+
+" automatically source the changes to vimrc when saved and closed
+aug reload_vimrc 
+  au!
+  au BufWritePost $MYVIMRC source $MYVIMRC
+  au BufWritePost *.vimrc source $MYVIMRC
+aug END
+
+" wrap lines
+set linebreak
+set wrap
+set breakindent

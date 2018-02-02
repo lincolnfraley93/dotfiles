@@ -1,8 +1,5 @@
 colorscheme dracula
 
-" vim-javascript
-let g:jsx_ext_required = 0
-
 " vim-easygrep 
 let g:EasyGrepRecursive=1
 let g:EasyGrepFilesToExclude=".git,node_modules,ios,android,package-lock.json,assets,npm-debug.log"
@@ -42,6 +39,9 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_map ='<Leader>t'
 " Use the nearest .git directory as the cwd
 let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_show_hidden = 1
+nnoremap <leader>C :CtrlPClearCache<cr>
+nnoremap <leader>t :CtrlP<cr>
 
 " vim-buffergator
 " Use the right side of the screen
@@ -69,9 +69,6 @@ nmap <silent> <leader>s <Plug>(ale_previous_wrap)
 nmap <silent> <leader>d <Plug>(ale_next_wrap)
 nnoremap <leader>ale :ALEFix<cr>
 
-" Narrow region
-vnoremap <leader>nrw :NW<cr>
-
 " NERDTree
 nnoremap <Leader>nt :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1
@@ -85,12 +82,10 @@ aug END
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-
+let g:deoplete#auto_complete_delay=150
 set completeopt=longest,menuone,preview
-
 let g:deoplete#sources = {}
 let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
-
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
@@ -121,20 +116,33 @@ let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
 
 " omnifuncs
 augroup omnifuncs
-  autocmd!
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+	autocmd!
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup end
 
 " tern
 if exists('g:plugs["tern_for_vim"]')
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = 1
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
+	let g:tern_show_argument_hints = 'on_hold'
+	let g:tern_show_signature_in_pum = 1
+	autocmd FileType javascript setlocal omnifunc=tern#Complete
 endif
 
 " javascript-libraries-syntax
 let g:used_javascript_libs='underscore,react,flux,ramda'
+
+" vim-textobj-quotes
+xnoremap q iq
+vnoremap q iq
+nnoremap q iq
+
+" vim-javascript
+let g:jsx_ext_required = 0
+
+" vim-multiple-cursors
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-s>'
+let g:multi_cursor_prev_key='<C-d>'

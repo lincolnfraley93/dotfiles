@@ -1,8 +1,11 @@
-au BufNewFile,BufRead *.py:
-      \ set tabstop=4
-      \ set softtabstop=4
-      \ set shiftwidth=4
-      \ set textwidth=79
-      \ set expandtab
-      \ set autoindent
-      \ set fileformat=unix
+aug filetype_python
+  au!
+  au FileType python set tabstop=4
+        \ softtabstop=4
+        \ shiftwidth=4
+        \ textwidth=79
+        \ expandtab
+        \ autoindent
+        \ fileformat=unix
+        \ smartindent
+aug END
