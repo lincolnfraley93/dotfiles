@@ -14,9 +14,6 @@ noremap l k
 noremap k j
 noremap j h
 
-" Go to end of line in insert mode
-inoremap <leader>a <esc>A
-
 " switch back to normal mode
 inoremap jk <ESC>
 
@@ -27,14 +24,6 @@ noremap > >>
 " go to beginning and end of line
 noremap K ^
 noremap L $
-
-" remove highlighting 
-nnoremap <leader>noh :noh<cr>
-
-" run python, typescript, and node
-nnoremap <Leader>ns :!npm start<cr>
-"nnoremap <Leader>tsn :!ts-node --type-check %<cr>
-nnoremap <leader>py :!python %<cr>
 
 " Convert word to uppercase while in insert mode
 inoremap <leader>u <esc>viwUA
