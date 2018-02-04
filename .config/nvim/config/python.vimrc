@@ -1,5 +1,6 @@
 aug filetype_python
   au!
+  au FileType python echom 'setting filetype to python'
   au FileType python set tabstop=4
         \ softtabstop=4
         \ shiftwidth=4

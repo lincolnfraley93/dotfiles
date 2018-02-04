@@ -43,7 +43,7 @@ call dein#add('terryma/vim-multiple-cursors')
 
 " javascript
 call dein#add('pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] })
-call dein#add('mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] })
+"call dein#add('mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] })
 call dein#add('othree/javascript-libraries-syntax.vim')
 call dein#add('ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' })
 call dein#add('carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] })

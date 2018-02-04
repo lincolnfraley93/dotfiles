@@ -35,8 +35,6 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/ios/*,*/android/*
 
 " create file as soon as it's edited
 fun! CreateFile()
-  :echom 'filetype'
-  :echom &ft
   if 'nerdtreebuffergator' =~ &ft
     return
   endif
