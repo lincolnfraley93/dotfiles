@@ -26,7 +26,7 @@ call dein#add('terryma/vim-multiple-cursors')
 
 " javascript
 call dein#add('pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] })
-"call dein#add('mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] })
+call dein#add('mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] })
 
 " text objects
 call dein#add('kana/vim-textobj-user')

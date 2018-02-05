@@ -55,37 +55,28 @@ nnoremap <leader>bl :BuffergatorOpen<cr>
 let g:mta_filetypes = {
       \ 'html' : 1,
       \ 'xhtml' : 1,
-      \ 'xml' : 1,
+      \ 'jxsxml' : 1,
       \ 'jinja' : 1,
       \ 'javascript.jsx': 1,
       \}
 
 " ALE
-let g:ale_fixers = {
-      \'javascript': ['eslint'],
-      \}
 " move between errors
 nmap <silent> <leader>s <Plug>(ale_previous_wrap)
 nmap <silent> <leader>d <Plug>(ale_next_wrap)
-nnoremap <leader>ale :ALEFix<cr>
 
 " NERDTree
 nnoremap <Leader>nt :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
-
+" close vim if one of last two buffers is nerdtree
 aug nerdtree_group
   au!
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 aug END
 
-" vim-textobj-quotes
-xnoremap q iq
-vnoremap q iq
-nnoremap q iq
-
-" vim-javascript
+" vim-jsx
 let g:jsx_ext_required = 0
 
 " vim-multiple-cursors

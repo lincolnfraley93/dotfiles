@@ -38,7 +38,7 @@ fun! CreateFile()
   if 'nerdtreebuffergator' =~ &ft
     return
   endif
-  :write
+  write
 endfun
 
 aug create_file
