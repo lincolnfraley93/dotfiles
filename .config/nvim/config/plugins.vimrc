@@ -83,3 +83,22 @@ let g:jsx_ext_required = 0
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-s>'
 let g:multi_cursor_prev_key='<C-d>'
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+      \ 'tern#Complete',
+      \ 'jspc#omni'
+      \]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+let g:UltiSnipsExpandTrigger="<C-j>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" supertab
+" scroll down the list
+let g:SuperTabDefaultCompletionType = "<c-n>"

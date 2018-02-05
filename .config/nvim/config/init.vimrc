@@ -7,6 +7,14 @@ call dein#add('dracula/vim')
 call dein#add('scrooloose/NERDTree')
 call dein#add('scrooloose/nerdcommenter')
 
+" autocompletion
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('ervandew/supertab')
+call dein#add('SirVer/ultisnips')
+call dein#add('honza/vim-snippets')
+call dein#add('ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] })
+call dein#add('carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] })
+call dein#add('othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] })
 
 call dein#add('easymotion/vim-easymotion')
 call dein#add('dkprice/vim-easygrep')
