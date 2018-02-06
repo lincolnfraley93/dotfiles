@@ -15,6 +15,7 @@ call dein#add('honza/vim-snippets')
 call dein#add('ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] })
 call dein#add('carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] })
 call dein#add('othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] })
+call dein#add('vim-scripts/AutoComplPop')
 
 call dein#add('easymotion/vim-easymotion')
 call dein#add('dkprice/vim-easygrep')
@@ -28,9 +29,7 @@ call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('jeetsukumaran/vim-buffergator')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('Valloric/MatchTagAlways')
-call dein#add('w0rp/ale')
 call dein#add('wesQ3/vim-windowswap')
-call dein#add('terryma/vim-multiple-cursors')
 
 " javascript
 call dein#add('pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] })
@@ -39,6 +38,7 @@ call dein#add('mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] })
 " text objects
 call dein#add('kana/vim-textobj-user')
 call dein#add('beloglazov/vim-textobj-quotes')
+call dein#add('w0rp/ale')
 
 call dein#end()
 call dein#save_state()

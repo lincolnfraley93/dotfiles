@@ -64,6 +64,7 @@ let g:mta_filetypes = {
 " move between errors
 nmap <silent> <leader>s <Plug>(ale_previous_wrap)
 nmap <silent> <leader>d <Plug>(ale_next_wrap)
+let g:ale_javascript_eslint_use_global = 1
 
 " NERDTree
 nnoremap <Leader>nt :NERDTreeToggle<Enter>
@@ -91,7 +92,8 @@ let g:deoplete#omni#functions.javascript = [
       \ 'tern#Complete',
       \ 'jspc#omni'
       \]
-set completeopt=longest,menuone,preview
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
 let g:deoplete#sources = {}
 let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
@@ -102,3 +104,5 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " supertab
 " scroll down the list
 let g:SuperTabDefaultCompletionType = "<c-n>"
+" close the preview window when you're not using it
+let g:SuperTabClosePreviewOnPopupClose = 1
