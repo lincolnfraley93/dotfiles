@@ -55,94 +55,55 @@ nnoremap <leader>bl :BuffergatorOpen<cr>
 let g:mta_filetypes = {
       \ 'html' : 1,
       \ 'xhtml' : 1,
-      \ 'xml' : 1,
+      \ 'jxsxml' : 1,
       \ 'jinja' : 1,
       \ 'javascript.jsx': 1,
       \}
 
 " ALE
-let g:ale_fixers = {
-      \'javascript': ['eslint'],
-      \}
 " move between errors
 nmap <silent> <leader>s <Plug>(ale_previous_wrap)
 nmap <silent> <leader>d <Plug>(ale_next_wrap)
-nnoremap <leader>ale :ALEFix<cr>
+let g:ale_javascript_eslint_use_global = 1
 
 " NERDTree
 nnoremap <Leader>nt :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
-
+" close vim if one of last two buffers is nerdtree
 aug nerdtree_group
   au!
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 aug END
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay=150
-set completeopt=longest,menuone,preview
-let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
-let g:tern#command = ['tern']
-let g:tern#arguments = ['--persistent']
-
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.javascript = [
-      \ 'tern#Complete',
-      \ 'jspc#omni'
-      \]
-
-autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-let g:UltiSnipsExpandTrigger="<C-j>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" close the preview window when you're not using it
-let g:SuperTabClosePreviewOnPopupClose = 1
-
-let g:deoplete#sources#ternjs#types = 1
-let g:deoplete#sources#ternjs#docs = 1
-let g:deoplete#sources#ternjs#filetypes = [
-      \ 'jsx',
-      \ 'javascript.jsx',
-      \ 'vue',
-      \ 'js',
-      \ ]
-
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
-
-" omnifuncs
-augroup omnifuncs
-	autocmd!
-	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
-
-" tern
-if exists('g:plugs["tern_for_vim"]')
-	let g:tern_show_argument_hints = 'on_hold'
-	let g:tern_show_signature_in_pum = 1
-	autocmd FileType javascript setlocal omnifunc=tern#Complete
-endif
-
-" javascript-libraries-syntax
-let g:used_javascript_libs='underscore,react,flux,ramda'
-
-" vim-textobj-quotes
-xnoremap q iq
-vnoremap q iq
-nnoremap q iq
-
-" vim-javascript
+" vim-jsx
 let g:jsx_ext_required = 0
 
 " vim-multiple-cursors
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-s>'
 let g:multi_cursor_prev_key='<C-d>'
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+      \ 'tern#Complete',
+      \ 'jspc#omni'
+      \]
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:deoplete#file#enable_buffer_path = 1
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+let g:UltiSnipsExpandTrigger="<C-j>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" supertab
+" scroll down the list
+let g:SuperTabDefaultCompletionType = "<c-n>"
+" close the preview window when you're not using it
+let g:SuperTabClosePreviewOnPopupClose = 1

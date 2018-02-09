@@ -1,8 +1,8 @@
 " add syntax highlighting 
-syntax on
+syntax enable
 
 " Sets filetype detection, plugin, and indent 
-filetype indent plugin on
+filetype plugin indent on
 
 set termguicolors
 
@@ -35,12 +35,10 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/ios/*,*/android/*
 
 " create file as soon as it's edited
 fun! CreateFile()
-  :echom 'filetype'
-  :echom &ft
   if 'nerdtreebuffergator' =~ &ft
     return
   endif
-  :write
+  write
 endfun
 
 aug create_file
@@ -59,3 +57,11 @@ aug END
 set linebreak
 set wrap
 set breakindent
+set breakindentopt+=shift:2
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set smartindent
+set autoindent
+set expandtab
