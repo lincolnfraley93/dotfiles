@@ -57,6 +57,7 @@ aug END
 set linebreak
 set wrap
 set breakindent
+set breakindentopt+=shift:2
 
 set tabstop=2
 set softtabstop=2
