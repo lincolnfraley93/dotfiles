@@ -1,8 +1,8 @@
 " add syntax highlighting 
-syntax on
+syntax enable
 
 " Sets filetype detection, plugin, and indent 
-filetype indent plugin on
+filetype plugin indent on
 
 set termguicolors
 
@@ -58,9 +58,9 @@ set linebreak
 set wrap
 set breakindent
 
-" tab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set breakindentopt=shift:2
 set smartindent
+set autoindent
+set expandtab
