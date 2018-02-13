@@ -5,6 +5,8 @@ let g:EasyGrepRecursive=1
 let g:EasyGrepFilesToExclude=".git,node_modules,ios,android,package-lock.json,assets,npm-debug.log"
 let g:EasyGrepCommand=1
 let g:EasyGrepJumpToMatch=0
+" open easygrep
+nnoremap <Leader>g :Grep 
 
 " haskell-vim
 let g:haskell_indent_case = 2
@@ -40,16 +42,12 @@ let g:ctrlp_map ='<Leader>t'
 " Use the nearest .git directory as the cwd
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_show_hidden = 1
-nnoremap <leader>C :CtrlPClearCache<cr>
-nnoremap <leader>t :CtrlP<cr>
 
 " vim-buffergator
 " Use the right side of the screen
 let g:buffergator_viewport_split_policy = 'R'
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_display_regime = "bufname"
-" View the entire list of buffers open
-nnoremap <leader>bl :BuffergatorOpen<cr>
 
 " MatchTagAlways
 let g:mta_filetypes = {
@@ -86,7 +84,11 @@ let g:multi_cursor_next_key='<C-s>'
 let g:multi_cursor_prev_key='<C-d>'
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
+aug deoplete_group
+  au!
+  au VimEnter * call deoplete#enable()
+aug END
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#functions.javascript = [
       \ 'tern#Complete',
@@ -107,3 +109,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:SuperTabDefaultCompletionType = "<c-n>"
 " close the preview window when you're not using it
 let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabNoCompleteAfter = ['//', '^', '\s']
+
+" nerdcommenter
+let g:NERDCustomDelimiters = { 'javascript.jsx': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' } }

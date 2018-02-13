@@ -34,13 +34,6 @@ nnoremap p p=`]
 " open vimrc from any vim buffer by typing leader key and then vimrc
 nnoremap <leader>ev :e $MYVIMRC<cr>
 
-" open easygrep
-nnoremap <Leader>g :Grep 
-
-" vim-fugitive
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-
 " open ~/.eslintrc in vertical split
 nnoremap <leader>esrc :vs ~/.eslintrc<cr>
 

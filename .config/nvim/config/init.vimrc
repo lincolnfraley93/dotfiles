@@ -1,3 +1,5 @@
+autocmd!
+
 call dein#begin(expand('~/.vim/dein')) " plugins' root path
 
 " colorschemes
@@ -6,6 +8,7 @@ call dein#add('dracula/vim')
 " general
 call dein#add('scrooloose/NERDTree')
 call dein#add('scrooloose/nerdcommenter')
+call dein#add('airblade/vim-gitgutter')
 
 "" autocompletion
 call dein#add('Shougo/deoplete.nvim')
@@ -30,6 +33,12 @@ call dein#add('Valloric/MatchTagAlways')
 "" javascript
 call dein#add('pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] })
 call dein#add('mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] })
+
+" swift
+call dein#add('kballard/vim-swift', {
+      \ 'filetypes': 'swift',
+      \ 'unite_sources': ['swift/device', 'swift/developer_dir']
+      \})
 
 "" text objects
 call dein#add('kana/vim-textobj-user')

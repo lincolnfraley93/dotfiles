@@ -6,3 +6,4 @@ source ~/.dotfiles/.config/nvim/config/python.vimrc
 source ~/.dotfiles/.config/nvim/config/javascript.vimrc
 source ~/.dotfiles/.config/nvim/config/vimrc.vimrc
 source ~/.dotfiles/.config/nvim/config/markdown.vimrc
+source ~/.dotfiles/.config/nvim/config/swift.vimrc

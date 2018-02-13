@@ -65,3 +65,5 @@ set shiftwidth=2
 set smartindent
 set autoindent
 set expandtab
+
+set updatetime=100
