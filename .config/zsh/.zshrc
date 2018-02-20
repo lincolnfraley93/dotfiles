@@ -60,6 +60,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -99,3 +100,7 @@ source $HOME/.bash_profile
 #source ~/git-completion.zsh
 #source ~/zsh-git-prompt/
 #PROMPT='%d> '
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+  fi
+}
