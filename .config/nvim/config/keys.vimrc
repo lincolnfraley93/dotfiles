@@ -42,3 +42,6 @@ nnoremap <C-K> <C-W><C-J>
 nnoremap <C-J> <C-W><C-H>
 nnoremap <C-L> <C-W><C-K>
 nnoremap <C-P> <C-W><C-L>
+
+" go to end of line in insert mode
+inoremap <c-a> <esc>A

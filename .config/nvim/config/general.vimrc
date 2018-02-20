@@ -26,12 +26,8 @@ aug disable_comments
   au BufNewFile,BufRead * setlocal fo-=cr
 aug END
 
-" highlight 'this' keyword
-hi ThisKeywordGroup ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE
-match ThisKeywordGroup /this/
-
 " ignored directories
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/ios/*,*/android/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/ios/*,*/android/*,*/.build/*
 
 " create file as soon as it's edited
 fun! CreateFile()
@@ -67,3 +63,6 @@ set autoindent
 set expandtab
 
 set updatetime=100
+
+" mouse support
+set mouse=a

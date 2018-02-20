@@ -4,6 +4,7 @@ call dein#begin(expand('~/.vim/dein')) " plugins' root path
 
 " colorschemes
 call dein#add('dracula/vim')
+call dein#add('crusoexia/vim-monokai')
 
 " general
 call dein#add('scrooloose/NERDTree')
@@ -40,10 +41,12 @@ call dein#add('kballard/vim-swift', {
       \ 'unite_sources': ['swift/device', 'swift/developer_dir']
       \})
 
+" elm
+call dein#add('elmcast/elm-vim')
+
 "" text objects
 call dein#add('kana/vim-textobj-user')
 call dein#add('beloglazov/vim-textobj-quotes')
-"call dein#add('w0rp/ale')
 
 call dein#end()
 call dein#save_state()
