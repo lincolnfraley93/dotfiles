@@ -45,3 +45,7 @@ nnoremap <C-P> <C-W><C-L>
 
 " go to end of line in insert mode
 inoremap <c-a> <esc>A
+
+" cycle through buffers
+nnoremap <leader>d :bprevious<cr>
+nnoremap <leader>s :bnext<cr>

@@ -27,7 +27,7 @@ aug disable_comments
 aug END
 
 " ignored directories
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/ios/*,*/android/*,*/.build/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/ios/*,*/android/*,*/.build/*,*/elm-stuff/*
 
 " create file as soon as it's edited
 fun! CreateFile()

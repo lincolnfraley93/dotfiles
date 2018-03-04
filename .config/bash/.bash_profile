@@ -34,6 +34,9 @@ export PATH
 PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
+PATH="/Users/lincolnfraley/Developer/flutter/bin/:${PATH}"
+export PATH
+
 #########
 # Aliases
 ########
@@ -53,6 +56,8 @@ alias and-em='/Users/lincolnfraley/Library/Android/sdk/tools/emulator -avd Nexus
 alias tsn='ts-node --type-check'
 alias lsa='ls -a'
 alias vim='nvim'
+alias js-lines="find . -name '*.js' | xargs wc -l"
+alias ve='virtualenv -p /usr/local/bin/python3'
 export PATH="$HOME/.cargo/bin:$PATH"
 
 
@@ -69,9 +74,3 @@ export REACT_EDITOR=webstorm
 
 # for command-t
 stty -ixon
-
-# git autocomplete
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
-

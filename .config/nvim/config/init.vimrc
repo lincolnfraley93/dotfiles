@@ -10,6 +10,7 @@ call dein#add('crusoexia/vim-monokai')
 call dein#add('scrooloose/NERDTree')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('airblade/vim-gitgutter')
+call dein#add('wesQ3/vim-windowswap')
 
 "" autocompletion
 call dein#add('Shougo/deoplete.nvim')
@@ -43,6 +44,9 @@ call dein#add('kballard/vim-swift', {
 
 " elm
 call dein#add('elmcast/elm-vim')
+
+" python
+call dein#add('python-mode/python-mode')
 
 "" text objects
 call dein#add('kana/vim-textobj-user')
