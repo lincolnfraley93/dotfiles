@@ -2,7 +2,7 @@ colorscheme monokai
 
 " vim-easygrep 
 let g:EasyGrepRecursive=1
-let g:EasyGrepFilesToExclude=".git,node_modules,ios,android,package-lock.json,assets,npm-debug.log,.build,elm-stuff"
+let g:EasyGrepFilesToExclude=".git,node_modules,ios,android,package-lock.json,assets,npm-debug.log,.build,elm-stuff,*-env,"
 let g:EasyGrepCommand=1
 let g:EasyGrepJumpToMatch=0
 " open easygrep
@@ -79,59 +79,59 @@ let g:multi_cursor_next_key='<C-s>'
 let g:multi_cursor_prev_key='<C-d>'
 
 " deoplete
-"let g:deoplete#enable_at_startup = 0
-"aug deoplete_group
-  "au!
-  "au VimEnter * call deoplete#enable()
-"aug END
-"let g:deoplete#omni#functions = {}
-"let g:deoplete#omni#functions.javascript = [
-      "\ 'tern#Complete',
-      "\ 'jspc#omni'
-      "\]
-"let g:deoplete#omni#functions['javascript.jsx'] = [
-      "\ 'tern#Complete',
-      "\ 'jspc#omni'
-      "\]
-"let g:deoplete#omni#input_patterns = {}
-"let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
-"let g:deoplete#omni#input_patterns['javascript.jsx'] = '[^. *\t]\.\w*'
-"let g:deoplete#sources = {}
-"let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
-"let g:deoplete#sources.javascript = ['file', 'ultisnips', 'ternjs']
-"let g:deoplete#file#enable_buffer_path = 1
-"let g:deoplete#disable_auto_complete = 1
-"let g:tern#command = ['tern']
-"let g:tern#arguments = ['--persistent']
-"let g:UltiSnipsExpandTrigger="<C-j>"
-"let g:deoplete#enable_refresh_always = 1
-"let g:deoplete#enable_camel_case = 1
-""set omnifunc=syntaxcomplete#Complete
-"augroup omnifuncs
-  "autocmd!
-  "autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  "autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  "autocmd FileType javascript.jsx setlocal omnifunc=javascriptcomplete#CompleteJS
-  "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"augroup end
+let g:deoplete#enable_at_startup = 0
+aug deoplete_group
+  au!
+  au VimEnter * call deoplete#enable()
+aug END
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+      \ 'tern#Complete',
+      \ 'jspc#omni'
+      \]
+let g:deoplete#omni#functions['javascript.jsx'] = [
+      \ 'tern#Complete',
+      \ 'jspc#omni'
+      \]
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
+let g:deoplete#omni#input_patterns['javascript.jsx'] = '[^. *\t]\.\w*'
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:deoplete#sources.javascript = ['file', 'ultisnips', 'ternjs']
+let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#disable_auto_complete = 1
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:deoplete#enable_refresh_always = 1
+let g:deoplete#enable_camel_case = 1
+set omnifunc=syntaxcomplete#Complete
+augroup omnifuncs
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType javascript.jsx setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
 
-"let g:tern_map_keys=1
+let g:tern_map_keys=1
   "" Display argument type hints when the cursor is left over a function
-"let g:tern_show_argument_hints = 'on_hold'
-"let g:tern_show_signature_in_pum = 1
-"autocmd FileType javascript,javascript.jsx setlocal omnifunc=tern#Complete
+let g:tern_show_argument_hints = 'on_hold'
+let g:tern_show_signature_in_pum = 1
+autocmd FileType javascript,javascript.jsx setlocal omnifunc=tern#Complete
 
-""tern 
-"let g:deoplete#sources#ternjs#types = 1
-"let g:deoplete#sources#ternjs#filetypes = [
-      "\ 'jsx',
-      "\ 'javascript.jsx',
-      "\ 'vue',
-      "\ '...'
-      "\ ]
-"let g:deoplete#sources#ternjs#docs = 1
+"tern 
+let g:deoplete#sources#ternjs#types = 1
+let g:deoplete#sources#ternjs#filetypes = [
+      \ 'jsx',
+      \ 'javascript.jsx',
+      \ 'vue',
+      \ '...'
+      \ ]
+let g:deoplete#sources#ternjs#docs = 1
 
 " supertab
 " scroll down the list

@@ -58,6 +58,7 @@ alias lsa='ls -a'
 alias vim='nvim'
 alias js-lines="find . -name '*.js' | xargs wc -l"
 alias ve='virtualenv -p /usr/local/bin/python3'
+alias sve='source *-env/bin/activate'
 export PATH="$HOME/.cargo/bin:$PATH"
 
 
