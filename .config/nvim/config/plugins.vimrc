@@ -1,4 +1,4 @@
-colorscheme monokai
+colorscheme paramount
 
 " vim-easygrep 
 let g:EasyGrepRecursive=1
@@ -118,8 +118,6 @@ augroup omnifuncs
 augroup end
 
 let g:tern_map_keys=1
-  "" Display argument type hints when the cursor is left over a function
-let g:tern_show_argument_hints = 'on_hold'
 let g:tern_show_signature_in_pum = 1
 autocmd FileType javascript,javascript.jsx setlocal omnifunc=tern#Complete
 
@@ -148,3 +146,13 @@ let g:elm_format_autosave = 0
 
 " python-mode
 let g:pymode_folding = 0
+let g:pymode_options_colorcolumn = 0
+
+" ale
+let g:ale_javascript_eslint_use_global = 1
+nmap <silent> <leader>s <Plug>(ale_previous_wrap)
+nmap <silent> <leader>d <Plug>(ale_next_wrap)
+let g:ale_fixers = {
+      \ 'javascript.jsx': ['eslint', 'importjs', 'prettier', 'prettier_eslint', 'prettier_standard', 'standard'],
+      \ 'javascript': ['eslint', 'importjs', 'prettier', 'prettier_eslint', 'prettier_standard', 'standard'],
+      \}

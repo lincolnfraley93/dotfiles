@@ -5,12 +5,15 @@ call dein#begin(expand('~/.vim/dein')) " plugins' root path
 " colorschemes
 call dein#add('dracula/vim')
 call dein#add('crusoexia/vim-monokai')
+call dein#add('flazz/vim-colorschemes')
+call dein#add('owickstrom/vim-colors-paramount')
 
 " general
 call dein#add('scrooloose/NERDTree')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('wesQ3/vim-windowswap')
+call dein#add('w0rp/ale')
 
 "" autocompletion
 call dein#add('Shougo/deoplete.nvim')
